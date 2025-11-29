@@ -5,7 +5,7 @@
   <title>Nsport - Elérhetőségek</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="manifest" href="manifest.json">
-  <meta name="theme-color" content="#c20000">
+  <meta name="theme-color" content="#c9a13a">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
@@ -20,7 +20,7 @@
 
 body {
   min-height: 100vh;
-  background: #8a8a8a; /* SZÜRKE HÁTTÉR */
+  background: linear-gradient(135deg, #3a3a3a, #0f0f0f);
   color: #fff;
   display: flex;
   justify-content: center;
@@ -28,52 +28,56 @@ body {
   padding: 20px;
 }
 
-/* 🔴 PIROS KÜLSŐ KERET – PIROS VILLOGÁS */
+/* 🟡 PRÉMIUM ARANY + ÜVEG KÁRTYA */
 .card {
-  background: #2a2a2a;
-  border-radius: 24px;
+  background: rgba(30, 30, 30, 0.55);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: 28px;
   padding: 32px 24px 40px;
   max-width: 420px;
   width: 100%;
   text-align: center;
-  box-shadow: 0 20px 40px rgba(0,0,0,0.8);
-  border: 3px solid #7a0000;
-  animation: policeFlashRed 1.2s infinite;
+  border: 2px solid rgba(201, 161, 58, 0.45);
+  box-shadow:
+    0 0 15px rgba(201, 161, 58, 0.25),
+    0 20px 40px rgba(0,0,0,0.8);
+  animation: goldGlow 2.8s infinite;
 }
 
-@keyframes policeFlashRed {
+@keyframes goldGlow {
   0% {
     box-shadow:
-      0 0 5px rgba(194, 0, 0, 0.3),
-      0 0 15px rgba(194, 0, 0, 0.4);
-    border-color: #7a0000;
+      0 0 8px rgba(201,161,58,0.25),
+      0 0 18px rgba(201,161,58,0.35);
   }
   50% {
     box-shadow:
-      0 0 15px rgba(255, 0, 0, 0.7),
-      0 0 35px rgba(255, 0, 0, 1);
-    border-color: #ff0000;
+      0 0 18px rgba(255,215,120,0.8),
+      0 0 40px rgba(255,215,120,1);
   }
   100% {
     box-shadow:
-      0 0 5px rgba(194, 0, 0, 0.3),
-      0 0 15px rgba(194, 0, 0, 0.4);
-    border-color: #7a0000;
+      0 0 8px rgba(201,161,58,0.25),
+      0 0 18px rgba(201,161,58,0.35);
   }
 }
 
-/* LOGÓ */
+/* LOGÓ – ARANY KERETTEL */
 .logo {
   width: 180px;
   height: 180px;
   margin: 0 auto 20px;
-  border-radius: 20px;
+  border-radius: 22px;
   overflow: hidden;
-  border: 3px solid #0047ff;
+  border: 3px solid #c9a13a;
   background: #000;
   display: flex;
   align-items: center;
   justify-content: center;
+  box-shadow:
+    0 0 10px rgba(201,161,58,0.5),
+    inset 0 0 10px rgba(201,161,58,0.3);
 }
 
 .logo img {
@@ -83,13 +87,15 @@ body {
 }
 
 h1 {
-  font-size: 1.5rem;
+  font-size: 1.6rem;
   margin-bottom: 8px;
+  letter-spacing: 1px;
+  color: #f5e6b3;
 }
 
 p {
-  font-size: 0.9rem;
-  color: #ddd;
+  font-size: 0.95rem;
+  color: #e0e0e0;
   margin-bottom: 24px;
 }
 
@@ -101,22 +107,25 @@ p {
   flex-wrap: nowrap;
 }
 
-/* 🔵 KÉK GOMBOK + KÉK FÉNY */
+/* 🟡 PRÉMIUM ARANY IKON GOMBOK */
 .social-btn {
   width: 60px;
   height: 60px;
-  border-radius: 18px;
+  border-radius: 16px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   text-decoration: none;
   font-weight: bold;
   font-size: 20px;
-  color: #ffffff;
-  background: #0047ff;
-  border: 2px solid #0047ff;
+  color: #1a1200;
+  background: linear-gradient(145deg, #ffe6a1, #c9a13a);
+  border: 2px solid #c9a13a;
   transition: 0.2s;
-  animation: pulseBlue 2.5s infinite;
+  animation: goldPulse 2.8s infinite;
+  box-shadow:
+    0 4px 10px rgba(0,0,0,0.5),
+    0 0 8px rgba(201,161,58,0.4);
 }
 
 /* HOVER + ÉRINTÉS */
@@ -124,27 +133,26 @@ p {
 .social-btn:active {
   transform: scale(1.12);
   box-shadow:
-    0 0 10px rgba(0, 71, 255, 0.6),
-    0 0 25px rgba(0, 71, 255, 0.8),
-    0 0 40px rgba(0, 71, 255, 1);
-  filter: brightness(1.2);
+    0 0 12px rgba(255,215,120,0.9),
+    0 0 28px rgba(255,215,120,1);
+  filter: brightness(1.15);
 }
 
 /* KATTINTÁS */
 .social-btn:active {
   transform: scale(0.92);
-  box-shadow: 0 0 5px rgba(0, 71, 255, 0.5);
+  box-shadow: 0 0 6px rgba(201,161,58,0.8);
 }
 
-/* 🔵 KÉK PULZÁLÁS */
-@keyframes pulseBlue {
-  0% { box-shadow: 0 0 5px rgba(0, 71, 255, 0.4); }
+/* 🟡 ARANY PULZÁLÁS */
+@keyframes goldPulse {
+  0% { box-shadow: 0 0 6px rgba(201,161,58,0.4); }
   50% {
     box-shadow:
-      0 0 12px rgba(0, 71, 255, 0.7),
-      0 0 25px rgba(0, 71, 255, 0.9);
+      0 0 14px rgba(255,215,120,0.85),
+      0 0 30px rgba(255,215,120,1);
   }
-  100% { box-shadow: 0 0 5px rgba(0, 71, 255, 0.4); }
+  100% { box-shadow: 0 0 6px rgba(201,161,58,0.4); }
 }
 </style>
 </head>
@@ -167,7 +175,6 @@ p {
     <a class="social-btn" href="https://www.tiktok.com/" target="_blank">TT</a>
     <a class="social-btn" href="tel:+40740901573">📞</a>
     <a class="social-btn" href="mailto:steliannagy@yahoo.com">✉️</a>
-
 
   </div>
 
