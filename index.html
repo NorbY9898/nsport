@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8">
+  <title>Nsport - Elérhetőségek</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#c20000">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+<style>
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  background: #8a8a8a; /* SZÜRKE HÁTTÉR */
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+/* 🔴 PIROS KÜLSŐ KERET – PIROS VILLOGÁS */
+.card {
+  background: #2a2a2a;
+  border-radius: 24px;
+  padding: 32px 24px 40px;
+  max-width: 420px;
+  width: 100%;
+  text-align: center;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.8);
+  border: 3px solid #7a0000;
+  animation: policeFlashRed 1.2s infinite;
+}
+
+@keyframes policeFlashRed {
+  0% {
+    box-shadow:
+      0 0 5px rgba(194, 0, 0, 0.3),
+      0 0 15px rgba(194, 0, 0, 0.4);
+    border-color: #7a0000;
+  }
+  50% {
+    box-shadow:
+      0 0 15px rgba(255, 0, 0, 0.7),
+      0 0 35px rgba(255, 0, 0, 1);
+    border-color: #ff0000;
+  }
+  100% {
+    box-shadow:
+      0 0 5px rgba(194, 0, 0, 0.3),
+      0 0 15px rgba(194, 0, 0, 0.4);
+    border-color: #7a0000;
+  }
+}
+
+/* LOGÓ */
+.logo {
+  width: 180px;
+  height: 180px;
+  margin: 0 auto 20px;
+  border-radius: 20px;
+  overflow: hidden;
+  border: 3px solid #0047ff;
+  background: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+h1 {
+  font-size: 1.5rem;
+  margin-bottom: 8px;
+}
+
+p {
+  font-size: 0.9rem;
+  color: #ddd;
+  margin-bottom: 24px;
+}
+
+.socials {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 10px;
+  flex-wrap: nowrap;
+}
+
+/* 🔵 KÉK GOMBOK + KÉK FÉNY */
+.social-btn {
+  width: 60px;
+  height: 60px;
+  border-radius: 18px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 20px;
+  color: #ffffff;
+  background: #0047ff;
+  border: 2px solid #0047ff;
+  transition: 0.2s;
+  animation: pulseBlue 2.5s infinite;
+}
+
+/* HOVER + ÉRINTÉS */
+.social-btn:hover,
+.social-btn:active {
+  transform: scale(1.12);
+  box-shadow:
+    0 0 10px rgba(0, 71, 255, 0.6),
+    0 0 25px rgba(0, 71, 255, 0.8),
+    0 0 40px rgba(0, 71, 255, 1);
+  filter: brightness(1.2);
+}
+
+/* KATTINTÁS */
+.social-btn:active {
+  transform: scale(0.92);
+  box-shadow: 0 0 5px rgba(0, 71, 255, 0.5);
+}
+
+/* 🔵 KÉK PULZÁLÁS */
+@keyframes pulseBlue {
+  0% { box-shadow: 0 0 5px rgba(0, 71, 255, 0.4); }
+  50% {
+    box-shadow:
+      0 0 12px rgba(0, 71, 255, 0.7),
+      0 0 25px rgba(0, 71, 255, 0.9);
+  }
+  100% { box-shadow: 0 0 5px rgba(0, 71, 255, 0.4); }
+}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+
+  <div class="logo">
+    <img src="logo.png" alt="Partizan Security logó">
+  </div>
+
+  <h1>Partizan Security</h1>
+  <p>Apasă pe platforma dorită</p>
+
+  <div class="socials">
+
+    <a class="social-btn" href="https://www.facebook.com/nsport.oradea" target="_blank">F</a>
+    <a class="social-btn" href="https://instagram.com/" target="_blank">IG</a>
+    <a class="social-btn" href="https://www.tiktok.com/" target="_blank">TT</a>
+    <a class="social-btn" href="tel:+40740901573">📞</a>
+    <a class="social-btn" href="mailto:steliannagy@yahoo.com">✉️</a>
+
+
+  </div>
+
+</div>
+
+</body>
+</html>
