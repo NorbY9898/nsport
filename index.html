@@ -1,113 +1,149 @@
 <!DOCTYPE html>
 <html lang="hu">
 <head>
-<meta charset="UTF-8">
-<title>Nsport Oradea</title>
+  <meta charset="UTF-8">
+  <!-- MOBIL BARÁT NÉZET -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<style>
-body{
-  margin:0;
-  background:#000;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  height:100vh;
-  font-family:Arial;
-  color:#fff;
-}
+  <title>Nsport Oradea</title>
 
-/* FŐ KÁRTYA */
-.card{
-  width:360px;
-  text-align:center;
-  padding:25px;
-  background:#111;
-  border-radius:18px;
-  border:3px solid red;
-  animation: alarm 1.2s infinite;
-}
+  <style>
+    *{
+      box-sizing:border-box;
+      margin:0;
+      padding:0;
+      font-family:Arial, sans-serif;
+    }
 
-@keyframes alarm{
-  0%{box-shadow:0 0 5px red;}
-  50%{box-shadow:0 0 30px red;}
-  100%{box-shadow:0 0 5px red;}
-}
+    body{
+      background:#000;
+      color:#fff;
+      min-height:100vh;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+    }
 
-/* LOGÓ */
-.logo{
-  width:140px;
-  height:140px;
-  margin:0 auto 20px;
-  border:2px solid red;
-}
-.logo img{
-  width:100%;
-  height:100%;
-  object-fit:contain;
-}
+    /* FŐ KÁRTYA – RESZPONZÍV */
+    .card{
+      width:90%;             /* mobilon a szélesség 90%-a */
+      max-width:380px;       /* PC-n max 380px */
+      text-align:center;
+      padding:22px 18px 26px;
+      background:#111;
+      border-radius:18px;
+      border:3px solid red;
+      animation:alarm 1.2s infinite;
+      box-shadow:0 0 10px rgba(255,0,0,0.6);
+    }
 
-/* IKON SOR */
-.socials{
-  display:flex;
-  justify-content:space-between;
-  flex-wrap:wrap;
-  gap:10px;
-}
+    @keyframes alarm{
+      0%{box-shadow:0 0 5px red;}
+      50%{box-shadow:0 0 30px red;}
+      100%{box-shadow:0 0 5px red;}
+    }
 
-/* IKON GOMBOK */
-.btn{
-  width:55px;
-  height:55px;
-  border:2px solid red;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  color:red;
-  text-decoration:none;
-  animation: shake 0.3s infinite alternate;
-}
+    /* LOGÓ – RESZPONZÍV */
+    .logo{
+      margin:0 auto 16px;
+      border:2px solid red;
+      border-radius:8px;
+      overflow:hidden;
+      width:45vw;            /* mobilon a kijelző ~45%-a */
+      height:45vw;
+      max-width:150px;       /* PC-n max 150px */
+      max-height:150px;
+      background:#000;
+    }
+    .logo img{
+      width:100%;
+      height:100%;
+      object-fit:contain;
+    }
 
-@keyframes shake{
-  from{transform:translateX(-1px);}
-  to{transform:translateX(1px);}
-}
-</style>
+    h2{
+      font-size:1.2rem;
+      margin-bottom:18px;
+    }
+
+    /* IKON SOR – RUGALMAS */
+    .socials{
+      display:flex;
+      flex-wrap:wrap;
+      justify-content:center;
+      gap:10px;
+    }
+
+    /* GOMBOK – RESZPONZÍV MÉRET */
+    .btn{
+      border:2px solid red;
+      color:red;
+      text-decoration:none;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+
+      width:16vw;
+      height:16vw;
+      max-width:56px;   /* PC-n ne legyen hatalmas */
+      max-height:56px;
+      min-width:42px;   /* nagyon kis telefonon se legyen túl pici */
+      min-height:42px;
+
+      font-size:1rem;
+      border-radius:10px;
+      animation:shake 0.3s infinite alternate;
+      background:#000;
+    }
+
+    @keyframes shake{
+      from{transform:translateX(-1px);}
+      to{transform:translateX(1px);}
+    }
+
+    /* KISEBB MOBILON KICSIT NAGYOBB BETŰK/GOMBOK */
+    @media (max-width:480px){
+      h2{font-size:1.1rem;}
+      .btn{font-size:1.05rem;}
+    }
+  </style>
 </head>
 
 <body>
 
-<div class="card">
+  <div class="card">
 
-  <!-- LOGÓ -->
-  <div class="logo">
-    <img src="logo.png" alt="Logó">
+    <!-- LOGÓ -->
+    <div class="logo">
+      <!-- Itt cseréled a fájlt, ha más név: logo.png → nsport-logo.png stb. -->
+      <img src="logo.png" alt="Nsport Oradea logó">
+    </div>
+
+    <!-- NÉV -->
+    <h2>Nsport Oradea</h2>
+
+    <div class="socials">
+      <!-- FACEBOOK -->
+      <a class="btn" href="https://www.facebook.com/nsport.oradea" target="_blank">F</a>
+
+      <!-- INSTAGRAM -->
+      <a class="btn" href="https://instagram.com" target="_blank">IG</a>
+
+      <!-- TIKTOK -->
+      <a class="btn" href="https://tiktok.com" target="_blank">TT</a>
+
+      <!-- TELEFON -->
+      <a class="btn" href="tel:+40740901573">📞</a>
+
+      <!-- EMAIL -->
+      <a class="btn" href="mailto:steliannagy@yahoo.com">✉️</a>
+
+      <!-- WEBOLDAL – később csak a LINKET kell átírnod -->
+      <a class="btn" href="https://norby9898.github.io/nsport-market" target="_blank">🌐</a>
+      <!-- ha más lesz a mini shop linkje, ezt cseréld: href="IDE_JÖN_A_LINK" -->
+    </div>
+
   </div>
-
-  <!-- NÉV -->
-  <h2>Nsport Oradea</h2>
-
-  <div class="socials">
-
-    <!-- FACEBOOK -->
-    <a class="btn" href="https://www.facebook.com/nsport.oradea" target="_blank">F</a>
-
-    <!-- INSTAGRAM -->
-    <a class="btn" href="https://instagram.com" target="_blank">IG</a>
-
-  
-
-    <!-- TELEFON -->
-    <a class="btn" href="tel:+40740901573">📞</a>
-
-    <!-- EMAIL -->
-    <a class="btn" href="mailto:steliannagy@yahoo.com">✉️</a>
-
-    <!-- 🔴 WEBOLDAL GOMB – KÉSŐBB CSAK A LINKET CSERÉLED -->
-    <a class="btn" href="https://norby9898.github.io/nsport-web/" target="_blank">🌐</a>
-
-  </div>
-
-</div>
 
 </body>
 </html>
